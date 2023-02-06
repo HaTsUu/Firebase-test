@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect} from 'react';
 import './App.css';
+import Register from './Register'
+import { Route, Routes } from 'react-router-dom';
+import Tasks from './Tasks';
 
-function App() {
+const App: React.FC = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <div className="App"> 
+    <Routes>
+        <Route path="/" element={<Tasks/>} />
+        <Route path="/register" element={<Register/>} />
+    </Routes>
+    </div>   
+  )
+};
 
 export default App;
+
+// collection(db, "tasks").doc(db, "id")onSnapshot((snapshot) 
